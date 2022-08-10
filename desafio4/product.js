@@ -1,38 +1,21 @@
+const fs = require('fs')
 
 class Product {
 
 
-
-    getData() {
-       return data = JSON.parse(            
-      {
-        "title": "gorro birrete negro",
-        "price": 1000.00,
-        "thumbnail": "https://cdn2.iconfinder.com/data/icons/knowledge-is-power/60/graduation-hat-128.png",
-        "id": 1
-      },
-      {
-        "title": "gorro birrete azul",
-        "price": 1200.00,
-        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-and-school-8/48/Education-128.png",
-        "id": 2
-      },
-      {
-        "title": "gorro bonete clasico",
-        "price": 1150.00,
-        "thumbnail": "https://cdn3.iconfinder.com/data/icons/object-emoji/50/PartyHat-256.png",
-        "id": 3
-      })
+    constructor(ruta){
+        this.ruta = ruta
     }
-    
+
 
     async save(objData){   
         
         try {
         
-            const dataParse = getData()
+            let data = await fs.promises.readFile(this.ruta, 'utf8')
+            const dataParse = JSON.parse(data)
             let arrayProds = [ ...dataParse, {...objData, id: dataParse.length + 1}]
-            await fs.promises.writeFile(this.ruta, JSON.stringify(arrayProds, null, 2), 'utf-8')    
+            await fs.promises.writeFile(this.ruta, JSON.stringify(this.ruta, null, 2), 'utf-8')    
             console.log(`El id del producto es insertado es: ${dataParse.length + 1}`)
         } catch (error) {
             console.log(error)
@@ -41,8 +24,8 @@ class Product {
 
     async getAll(){
         try {
-           
-            const dataParse = getData()
+            let data = await fs.promises.readFile(this.ruta, 'utf8')
+            const dataParse = JSON.parse(data)
             console.log(dataParse)
 
         } catch (error) {
@@ -53,7 +36,8 @@ class Product {
 
     async getById(id){
         try {
-            const dataParse = getData()
+            let data = await fs.promises.readFile(this.ruta, 'utf8')
+            const dataParse = JSON.parse(data)
             let producto = dataParse.find(producto => producto.id === id)
             if (producto) {
                 console.log(producto)                
@@ -67,11 +51,12 @@ class Product {
 
     async deleteById(id){
         try {
-            const dataParse = getData()
+            let data = await fs.promises.readFile(this.ruta, 'utf8')
+            const dataParse = JSON.parse(data)
             let producto = dataParse.find(producto => producto.id === id)
             if (producto) {
                 let arrayProds = dataParse.filter(producto => producto.id !== id)
-                await fs.promises.writeFile(this.ruta, JSON.stringify(arrayProds, null, 2), 'utf-8')    
+                await fs.promises.writeFile(this.ruta, JSON.stringify(this.ruta, null, 2), 'utf-8')    
                 console.log(`El producto con id ${id} ha sido borrado`)
             } else {
                 console.log('No existe el producto')                
@@ -88,4 +73,4 @@ class Product {
 
 
 
-module.exports = Product
+module.exports =   { Product }
