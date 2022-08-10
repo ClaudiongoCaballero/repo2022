@@ -1,21 +1,21 @@
-const Product = require('./product.js')
-const product = new Product()
+
+const  { Product } =  require('./product.js')
+const product = new Product('./products.json')
 const { urlencoded } = require('express')
 const express = require('express')
 const cookieParser = require('cookie-parser')
  
 
 const app = express()
-const routerProducts = Router()
 
 
-routerProducts.get('/', (req, res) => {
-    res.status(200)
-    .json({ message: 'Bienvenido a la API de productos' })
-  })
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
 
 
-routerProducts.get('/:id', async (req, res) => {  
+
+app.get('/api/products/:id', async (req, res) => {  
     const {id} = req  
     const findProduct = product.getById(+id)
     res.json(
@@ -25,33 +25,38 @@ routerProducts.get('/:id', async (req, res) => {
     );
 })
 
-routerProducts.get('/', (req, res) => {    
-    const allProduct = product.getAll()
+app.get('/api/products/', (req, res) => {    
+    const allProducts = product.getAll()
     res.json(
         {
-           allProduct
+           allProducts
         }
     );
 })
 
-routerProducts.post('/', (req, res) => {   
-    const findProduct = product.save(req) 
+app.post('/api/products/:id', (req, res) => {   
+    const allProducts = product.getAll()
+    let newProduct = { ...req.body, id: allProducts.length + 1 };
+    const findProduct = product.save(newProduct) 
     res.json(
         {
-            "Title": "Hola mundo usando rutas!"
+            "Title": "product saved!"
         }
     );
 })
 
-routerProducts.put('/', (req, res) => {    
+app.put('/api/products/:id', (req, res) => {    
+    
+    const findProduct = product.getById(+id)
+    const edit = product.save(findProduct) 
     res.json(
         {
-            "Title": "Hola mundo usando rutas!"
+            edit
         }
     );
 })
 
-routerProducts.delete('/:id', (req, res) => {    
+app.delete('/api/products/:id', (req, res) => {    
     const {id} = req  
     const deleteProduct = product.deleteById(+id)
     res.json(
@@ -61,8 +66,6 @@ routerProducts.delete('/:id', (req, res) => {
     );
 })
 
-
-app.use('/api/products', routerProducts)
 
 
 app.use( (err, req, res, next) => {
@@ -77,4 +80,3 @@ const server = app.listen(PORT, () => {
 })
 
  
-module.exports = router;
