@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 50%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <h1> API RESTful </h1>
+    <form method="POST" action="http://localhost:8080/api/products" >
+        <h2>Add new product</h2>
+
+        <table>
+          <tr>
+            <td><label>Product</label></td>
+            <td> <input type="text" name="name" id='nameId' required></td>
+          </tr>
+          <tr>
+            <td> <label>Thumbnail</label></td>
+            <td><input type="text" name="thumbnail" id='thumbnailId' required></td>
+          </tr>
+          <tr>
+            <td> <label>Price</label></td>
+            <td><input type="text" name="price" id='priceId' required></td>
+          </tr>
+        </table>
+        
+        <br><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
