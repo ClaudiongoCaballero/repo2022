@@ -1,12 +1,14 @@
 
 const  { Product } =  require('./product.js')
 const product = new Product('./products.json')
-const { urlencoded } = require('express')
 const express = require('express')
-const cookieParser = require('cookie-parser')
  
 
 const app = express()
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
@@ -16,54 +18,36 @@ app.get('/', (req, res) => {
 
 
 app.get('/api/products/:id', async (req, res) => {  
-    const {id} = req  
+    let id = req.params.id
+    //console.log(id) 
     const findProduct = product.getById(+id)
-    res.json(
-        {
-           findProduct
-        }
-    );
+    res.send(findProduct);
 })
 
-app.get('/api/products/', (req, res) => {    
+app.get('/api/products/', async (req, res) => {    
     const allProducts = product.getAll()
-    res.json(
-        {
-           allProducts
-        }
-    );
+    res.send(allProducts);
 })
 
-app.post('/api/products/:id', (req, res) => {   
+app.post('/api/products/', async (req, res) => {   
+    //console.log(req.body)
     const allProducts = product.getAll()
     let newProduct = { ...req.body, id: allProducts.length + 1 };
     const findProduct = product.save(newProduct) 
-    res.json(
-        {
-            "Title": "product saved!"
-        }
-    );
+    res.send(newProduct);
 })
 
-app.put('/api/products/:id', (req, res) => {    
-    
-    const findProduct = product.getById(+id)
-    const edit = product.save(findProduct) 
-    res.json(
-        {
-            edit
-        }
-    );
+app.put('/api/products/:id', async (req, res) => {    
+    //console.log(req.body + " - " + req.params.id)
+      const edit = product.edit(req.body, +req.params.id) 
+    res.send(edit);
 })
 
-app.delete('/api/products/:id', (req, res) => {    
-    const {id} = req  
+app.delete('/api/products/:id', async (req, res) => {    
+    //console.log(req.params.id)
+    let id = req.params.id
     const deleteProduct = product.deleteById(+id)
-    res.json(
-        {
-            deleteProduct
-        }
-    );
+    res.send(deleteProduct);
 })
 
 
@@ -76,7 +60,7 @@ app.use( (err, req, res, next) => {
 
 const PORT = 8080
 const server = app.listen(PORT, () => {
-    console.log(`escuchando en el puerto: ${server.address().port}`)
+    console.log(`Escuchando en el puerto: ${server.address().port}`)
 })
 
  
