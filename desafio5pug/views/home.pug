@@ -1,0 +1,36 @@
+html(lang="en")
+  head
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Products with Pug
+  body
+    include ./partials/header
+    h1 Add New Product
+    form(method="POST" action="/api/products") 
+    table
+        thead
+            tbody 
+            tr
+              td Name
+            tr 
+              td() 
+               input(type="text", name="name")
+            tr
+              td Price   
+            tr   
+              td() 
+               input(type="text", name="price")
+            tr
+              td Image  
+            tr   
+              td()
+               input(type="text", name="thumbnail")
+            tr
+            tr
+            tr   
+
+    input(type="submit", value="Add")
+
+    include ./partials/footer
