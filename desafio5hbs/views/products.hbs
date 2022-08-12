@@ -1,0 +1,24 @@
+{{> header}}
+<h1>Products</h1>
+{{#if products}}
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>       
+        <td><img src="{{{this.thumbnail}}}" alt=""/></td>
+      </tr>
+      <tr>
+        <td>{{this.name}}</td>
+      </tr>
+      <tr> 
+        <td>${{this.price}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No products found</p>
+{{/if}}
+{{> footer}}
