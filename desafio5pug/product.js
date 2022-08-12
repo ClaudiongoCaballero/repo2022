@@ -25,10 +25,9 @@ class Product {
     async save(objData){   
         
         try {
-        
-            const data = await this.#readFile();
+            const data = await fs.promises.readFile(this.ruta, 'utf-8');
             const dataParse = JSON.parse(data)
-            let arrayProds = [ ...dataParse, {...objData, id: dataParse.length + 1}]
+            let arrayProds = [ ...dataParse, {...objData}]
             await fs.promises.writeFile(this.ruta, JSON.stringify(arrayProds, null, 2), 'utf-8')    
             console.log(`El id del producto es insertado es: ${dataParse.length + 1}`)
             return `El id del producto es insertado es: ${dataParse.length + 1}`
@@ -51,7 +50,7 @@ class Product {
 
     async getById(id){
         try {
-            const data = await this.#readFile();
+            const data = await fs.promises.readFile(this.ruta, 'utf-8');
             const dataParse = JSON.parse(data)
             let producto = dataParse.find(producto => producto.id === id)
             if (producto) {
@@ -66,7 +65,7 @@ class Product {
 
     async edit(objData, id){
         try {
-            const data = await this.#readFile();
+            const data = await fs.promises.readFile(this.ruta, 'utf-8');
             const dataParse = JSON.parse(data)
             let producto = dataParse.find(producto => producto.id === id)
             if (producto) {
@@ -84,7 +83,7 @@ class Product {
 
     async deleteById(id){
         try {
-            const data = await this.#readFile();
+            const data = await fs.promises.readFile(this.ruta, 'utf-8');
             const dataParse = JSON.parse(data)
             let producto = dataParse.find(producto => producto.id === id)
             if (producto) {
