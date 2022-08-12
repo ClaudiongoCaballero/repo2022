@@ -34,5 +34,11 @@
     "price": 1200,
     "thumbnail": "https://cdn4.iconfinder.com/data/icons/logistics-and-shipping-5/85/gps_map_delivery_city_location-128.png",
     "id": 6
+  },
+  {
+    "name": "pegamento",
+    "price": "455",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/car-maintenance-and-service/32/glue-paste-tube-car-mechanic-garage-2-128.png",
+    "id": 7
   }
 ]
