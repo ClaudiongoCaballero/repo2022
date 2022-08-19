@@ -1,0 +1,44 @@
+[
+  {
+    "name": "compas",
+    "price": 1400,
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/science-and-technology-6-5/48/278-128.png",
+    "id": 2
+  },
+  {
+    "name": "calculadora",
+    "price": 12500,
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/science-set-1/512/14-128.png",
+    "id": 3
+  },
+  {
+    "name": "regla",
+    "price": 1345,
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/small-things/100/small-stuff-20151014-go-17-128.png",
+    "id": 4
+  },
+  {
+    "name": "boligrafo",
+    "price": "1456",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/business-804/24/draw-ink-wrinting-design-signing-pen-128.png",
+    "id": 1
+  },
+  {
+    "name": "lapiz",
+    "price": "300",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/flat-pack-1/64/Pencil-128.png",
+    "id": 5
+  },
+  {
+    "name": "mapa",
+    "price": 1200,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/logistics-and-shipping-5/85/gps_map_delivery_city_location-128.png",
+    "id": 6
+  },
+  {
+    "name": "pegamento",
+    "price": "455",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/car-maintenance-and-service/32/glue-paste-tube-car-mechanic-garage-2-128.png",
+    "id": 7
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "calculadora",
+    "price": 12500,
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/science-set-1/512/14-128.png",
+    "id": 3
+  },
+  {
+    "name": "regla",
+    "price": 1345,
+    "thumbnail": "https://cdn0.iconfinder.com/data/icons/small-things/100/small-stuff-20151014-go-17-128.png",
+    "id": 4
+  },
+  {
+    "name": "boligrafo",
+    "price": "1456",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/business-804/24/draw-ink-wrinting-design-signing-pen-128.png",
+    "id": 1
+  },
+  {
+    "name": "lapiz",
+    "price": "300",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/flat-pack-1/64/Pencil-128.png",
+    "id": 5
+  },
+  {
+    "name": "mapa",
+    "price": 1200,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/logistics-and-shipping-5/85/gps_map_delivery_city_location-128.png",
+    "id": 6
+  },
+  {
+    "name": "goma",
+    "price": "450",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/zwo-basic-interface-vol-1/25/erase_eraser_clear_rubber-128.png",
+    "id": 7
+  },
+  {
+    "name": "tijera",
+    "price": "2600",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/picons-basic-2/57/basic2-032_scissors_cut-128.png",
+    "id": 8
+  }
+]

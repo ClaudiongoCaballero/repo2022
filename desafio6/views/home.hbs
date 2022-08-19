@@ -1,0 +1,18 @@
+{{> header}}
+<h1>Add a new product</h1>
+<form action="/api/products" method="post">
+  <label>
+    <span>Title</span>
+    <input type="text" name="name" value="{{name}}">
+  </label>
+  <label>
+    <span>Price</span>
+    <input type="text" name="price" value="{{price}}">
+  </label>
+  <label>
+    <span>Image</span>
+    <input type="text" name="thumbnail" value="{{thumbnail}}">
+  </label>
+  <input type="submit" value="Add">
+</form>
+{{> footer}}
