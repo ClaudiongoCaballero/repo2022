@@ -1,5 +1,14 @@
 [
   {
+<<<<<<< HEAD
+=======
+    "name": "compas",
+    "price": 1400,
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/science-and-technology-6-5/48/278-128.png",
+    "id": 2
+  },
+  {
+>>>>>>> 1e9be6727ea3666a35bd072347d9fe47f783a2f7
     "name": "calculadora",
     "price": 12500,
     "thumbnail": "https://cdn1.iconfinder.com/data/icons/science-set-1/512/14-128.png",
@@ -28,6 +37,7 @@
     "price": 1200,
     "thumbnail": "https://cdn4.iconfinder.com/data/icons/logistics-and-shipping-5/85/gps_map_delivery_city_location-128.png",
     "id": 6
+<<<<<<< HEAD
   },
   {
     "name": "goma",
@@ -42,3 +52,7 @@
     "id": 8
   }
 ]
+=======
+  }
+]
+>>>>>>> 1e9be6727ea3666a35bd072347d9fe47f783a2f7
